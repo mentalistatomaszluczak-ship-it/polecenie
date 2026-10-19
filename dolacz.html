@@ -74,7 +74,7 @@
   </section>
 </main>
 
-<footer><div class="wrap"><a href="regulamin.html">Regulamin programu poleceń</a> · Organizator: Like Nature sp. z o.o., ul. Zimna 1, 65-707 Zielona Góra, NIP 9292088235</div></footer>
+<footer><div class="wrap"><a href="regulamin.html">Regulamin programu poleceń</a> · Organizator: Mentalista Tomasz Łuczak — Like Nature sp. z o.o., ul. Zimna 1, 65-707 Zielona Góra, NIP 9292088235</div></footer>
 
 <script>
 (function(){
@@ -106,7 +106,7 @@
     fetch(FORM,{method:"POST",mode:"no-cors",body:d}).then(pokaz, pokaz);
     function pokaz(){
       $("zapis").style.display="none"; $("wynik").style.display="block"; $("link").textContent=link;
-      var tekst = "Stary, wiem, że teraz nie jest łatwo. Mnie pomógł Tomasz Łuczak. Zobacz, rozmowa jest bezpłatna: " + link;
+      var tekst = "Stary, wiem, że teraz nie jest łatwo. Mnie pomógł Mentalista Tomasz Łuczak. Zobacz, rozmowa jest bezpłatna: " + link;
       $("wa").href = "https://wa.me/?text=" + encodeURIComponent(tekst);
       $("sms").href = "sms:?&body=" + encodeURIComponent(tekst);
       $("wynik").scrollIntoView({behavior:"smooth"});
