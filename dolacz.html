@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dołącz do programu poleceń — Mentalista Tomasz Łuczak</title>
+<meta name="description" content="Odbierz swój link polecający i daj znać facetowi, który dziś stoi tam, gdzie ty stałeś.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#1f2022;--bg-2:#333538;--text:#f2f0eb;--muted:#b9b6ae;--gold:#ffcb45;--gold-ink:#1f2022;--line:rgba(255,255,255,.12);--max:640px}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font:400 18px/1.65 Inter,system-ui,sans-serif}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  header{padding:22px 0;border-bottom:1px solid var(--line)}
+  .brand{font:600 14px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .brand b{color:var(--gold);font-weight:600}
+  h1{font:700 clamp(30px,6vw,42px)/1.15 "Playfair Display",Georgia,serif;margin:48px 0 16px}
+  .lead{color:var(--muted);margin:0 0 24px}
+  .bonus{background:var(--bg-2);border-left:4px solid var(--gold);padding:18px 20px;border-radius:6px;margin:0 0 28px;font-size:16px}
+  .bonus b{color:var(--gold)}
+  form{display:grid;gap:14px;margin-bottom:48px}
+  label.f{display:grid;gap:6px;font-size:15px;color:var(--muted)}
+  input[type=text],input[type=email],input[type=tel]{font:inherit;color:var(--text);background:var(--bg-2);border:1px solid var(--line);border-radius:6px;padding:12px 14px;width:100%}
+  input:focus{outline:2px solid var(--gold);outline-offset:1px}
+  .row{display:grid;gap:14px}
+  @media (min-width:560px){.row{grid-template-columns:1fr 1fr}}
+  .consent{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.5;color:var(--muted);cursor:pointer}
+  .consent input{width:22px;height:22px;margin:2px 0 0;accent-color:var(--gold);flex:none}
+  a{color:var(--gold)}
+  .btn{font:600 17px Inter,sans-serif;background:var(--gold);color:var(--gold-ink);border:0;border-radius:6px;padding:16px 22px;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+  .btn.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+  .err{color:#ff8a7a;font-size:15px;min-height:1em;margin:0}
+  #wynik{display:none;margin-bottom:56px}
+  .link{background:var(--bg-2);border:1px solid var(--gold);border-radius:6px;padding:14px;font-size:15px;word-break:break-all;margin:12px 0 16px}
+  .akcje{display:flex;flex-wrap:wrap;gap:10px}
+  .note{font-size:14px;color:var(--muted)}
+  footer{padding:28px 0 44px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+  footer a{color:inherit}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="brand">Mentalista <b>Tomasz Łuczak</b></div></div></header>
+
+<main class="wrap">
+  <h1>Znasz faceta, który dziś stoi tam, gdzie ty stałeś?</h1>
+  <p class="lead">Odbierz swój link polecający. Wyślesz go komu chcesz, a on trafi prosto na rozmowę ze mną.</p>
+  <div class="bonus">Jeśli polecony dołączy do programu <b>Mężczyzna Kompletny VIP</b>, obaj dostajecie po <b>3 miesiące</b> spotkań grupowych gratis. Przy programie <b>Mentor</b> po <b>1 miesiącu</b>.</div>
+
+  <form id="zapis" novalidate>
+    <div class="row">
+      <label class="f">Imię<input type="text" id="imie" autocomplete="given-name" required></label>
+      <label class="f">Nazwisko<input type="text" id="nazwisko" autocomplete="family-name" required></label>
+    </div>
+    <label class="f">E-mail<input type="email" id="mail" autocomplete="email" required></label>
+    <label class="f">Telefon<input type="tel" id="tel" autocomplete="tel"></label>
+    <label class="consent"><input type="checkbox" id="z1"><span>Akceptuję <a href="regulamin.html" target="_blank">regulamin programu poleceń</a>. (wymagane)</span></label>
+    <label class="consent"><input type="checkbox" id="z2" checked><span>Zgadzam się, żeby moje imię i nazwisko widział ten, komu wyślę link („Polecił Cię …”). Bez tej zgody link zadziała, tylko bez Twojego imienia.</span></label>
+    <p class="err" id="err" role="alert"></p>
+    <button class="btn" type="submit" id="wyslij">Odbieram swój link</button>
+  </form>
+
+  <section id="wynik" aria-live="polite">
+    <h2 style="font:700 26px/1.25 'Playfair Display',serif;margin:0 0 8px">Twój link polecający</h2>
+    <p class="note">Zapisz go. Ten sam link możesz wysyłać wielu osobom.</p>
+    <div class="link" id="link"></div>
+    <div class="akcje">
+      <button class="btn" type="button" id="kopiuj">Kopiuj link</button>
+      <a class="btn ghost" id="wa" target="_blank" rel="noopener">Wyślij na WhatsApp</a>
+      <a class="btn ghost" id="sms">Wyślij SMS-em</a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><a href="regulamin.html">Regulamin programu poleceń</a> · Organizator: Like Nature sp. z o.o., ul. Zimna 1, 65-707 Zielona Góra, NIP 9292088235</div></footer>
+
+<script>
+(function(){
+  var FORM = "https://docs.google.com/forms/d/e/1FAIpQLSfp0BnsgAZpb2vvUzdCzZK_-oblKj4VJVwmxhAoGoXGiQHocA/formResponse";
+  var E = {imie:"entry.1759123818", nazwisko:"entry.534935994", mail:"entry.326716960", tel:"entry.291404186",
+           kod:"entry.1369450531", link:"entry.1751289484", z1:"entry.1480820785", z2:"entry.549826366"};
+  var BAZA = "https://polecenie.tomaszluczak.pl/";
+  function $(id){ return document.getElementById(id); }
+  function bezOgonkow(s){
+    return s.replace(/ł/g,"l").replace(/Ł/g,"L").normalize("NFD").replace(/[̀-ͯ]/g,"").toUpperCase().replace(/[^A-Z]/g,"");
+  }
+  function hash2(s){ var h=0; for (var i=0;i<s.length;i++){ h=(h*31+s.charCodeAt(i))>>>0; } return ("0"+(h%100)).slice(-2); }
+  function kod(nazwisko, mail){ return (bezOgonkow(nazwisko).slice(0,6) || "POLEC") + hash2(mail.toLowerCase()); }
+
+  $("zapis").addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var imie=$("imie").value.trim(), nazw=$("nazwisko").value.trim(), mail=$("mail").value.trim(), tel=$("tel").value.trim();
+    if (!imie || !nazw){ $("err").textContent="Wpisz imię i nazwisko."; return; }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)){ $("err").textContent="Sprawdź adres e-mail."; return; }
+    if (!$("z1").checked){ $("err").textContent="Zaakceptuj regulamin, żeby odebrać link."; return; }
+    $("err").textContent=""; $("wyslij").disabled=true; $("wyslij").textContent="Chwila…";
+    var k = kod(nazw, mail);
+    var q = new URLSearchParams({ref:k});
+    if ($("z2").checked) q.set("n", imie+" "+nazw);
+    var link = BAZA + "?" + q.toString();
+    var d = new URLSearchParams();
+    d.set(E.imie,imie); d.set(E.nazwisko,nazw); d.set(E.mail,mail); d.set(E.tel,tel); d.set(E.kod,k); d.set(E.link,link);
+    d.set(E.z1,"tak " + new Date().toISOString()); d.set(E.z2,$("z2").checked ? "tak" : "nie");
+    fetch(FORM,{method:"POST",mode:"no-cors",body:d}).then(pokaz, pokaz);
+    function pokaz(){
+      $("zapis").style.display="none"; $("wynik").style.display="block"; $("link").textContent=link;
+      var tekst = "Stary, wiem, że teraz nie jest łatwo. Mnie pomógł Tomasz Łuczak. Zobacz, rozmowa jest bezpłatna: " + link;
+      $("wa").href = "https://wa.me/?text=" + encodeURIComponent(tekst);
+      $("sms").href = "sms:?&body=" + encodeURIComponent(tekst);
+      $("wynik").scrollIntoView({behavior:"smooth"});
+    }
+  });
+  $("kopiuj").addEventListener("click", function(){
+    var t=$("link").textContent;
+    (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function(){ $("kopiuj").textContent="Skopiowane"; }, function(){
+      var r=document.createRange(); r.selectNodeContents($("link")); var s=getSelection(); s.removeAllRanges(); s.addRange(r); $("kopiuj").textContent="Zaznaczone — Ctrl+C";
+    });
+  });
+})();
+</script>
+</body>
+</html>

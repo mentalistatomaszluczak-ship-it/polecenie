@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Z polecenia — Mentalista Tomasz Łuczak</title>
+<meta name="description" content="Dostałeś ten link od kogoś, kto pracował z Tomaszem Łuczakiem. Umów bezpłatną rozmowę.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#1f2022;
+    --bg-2:#333538;
+    --text:#f2f0eb;
+    --muted:#b9b6ae;
+    --gold:#ffcb45;
+    --gold-ink:#1f2022;
+    --line:rgba(255,255,255,.12);
+    --max:720px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--text);font:400 18px/1.65 Inter,system-ui,sans-serif}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  header{padding:22px 0;border-bottom:1px solid var(--line)}
+  .brand{font:600 14px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .brand b{color:var(--gold);font-weight:600}
+  .hero{padding:64px 0 40px}
+  .hero{display:grid;gap:28px;align-items:center}
+  .hero-photo{margin:0;order:-1}
+  .hero-photo img{width:100%;height:auto;max-width:300px;aspect-ratio:4/5;object-fit:cover;border-radius:8px;display:block;border:1px solid var(--line)}
+  .hero-photo figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+  @media (min-width:760px){.hero{grid-template-columns:1.4fr 1fr}.hero-photo{order:0}.hero-photo img{max-width:none}}
+  .slot{border:2px dashed var(--gold);color:var(--gold);border-radius:8px;padding:40px 20px;text-align:center;font-size:15px}
+  .tag{display:inline-block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:6px 12px;border-radius:999px;margin-bottom:24px}
+  h1{font:700 clamp(32px,6vw,48px)/1.15 "Playfair Display",Georgia,serif;margin:0 0 20px}
+  .lead{font-size:20px;color:var(--muted);margin:0}
+  section{padding:36px 0;border-top:1px solid var(--line)}
+  p{margin:0 0 16px}
+  .punch{font-weight:600;color:var(--text)}
+  .list{margin:20px 0 0;padding:0;list-style:none}
+  .list li{padding:14px 0 14px 34px;position:relative;border-bottom:1px solid var(--line)}
+  .list li::before{content:"";position:absolute;left:4px;top:24px;width:12px;height:2px;background:var(--gold)}
+  .bonus{background:var(--bg-2);border-left:4px solid var(--gold);padding:24px;border-radius:6px;margin:8px 0}
+  .bonus h2{font:700 24px/1.25 "Playfair Display",serif;margin:0 0 10px;color:var(--gold)}
+  .bonus p:last-child{margin:0}
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:20px}
+  .gallery img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:6px;display:block;background:var(--bg-2)}
+  .gallery img.wide{grid-column:1/-1;aspect-ratio:16/9}
+  .gallery img[src*="ognisko"]{aspect-ratio:3/4}
+  .video{max-width:340px;margin:24px auto 0}
+  .video video{width:100%;height:auto;border-radius:8px;display:block;background:#000}
+  h2{font:700 28px/1.25 "Playfair Display",serif;margin:0 0 16px}
+  .consent{display:flex;gap:12px;align-items:flex-start;background:var(--bg-2);padding:16px;border-radius:6px;margin:20px 0;font-size:15px;line-height:1.5;color:var(--muted);cursor:pointer}
+  .consent input{width:22px;height:22px;margin:2px 0 0;accent-color:var(--gold);flex:none}
+  .cal{background:#fff;border-radius:8px;overflow:hidden;min-height:640px}
+  .cal iframe{display:block;width:100%;height:760px;border:0}
+  .note{font-size:14px;color:var(--muted);margin-top:12px}
+  .btn{display:inline-block;background:var(--gold);color:var(--gold-ink);font-weight:600;text-decoration:none;padding:16px 26px;border-radius:6px;margin-top:8px}
+  .btn:focus-visible,.consent:focus-within{outline:3px solid var(--gold);outline-offset:3px}
+  .close{font:600 22px/1.4 "Playfair Display",serif;color:var(--text);margin:0}
+  footer{padding:32px 0 48px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+  .draft{position:fixed;right:12px;bottom:12px;background:#c0392b;color:#fff;font-size:12px;padding:6px 10px;border-radius:4px;letter-spacing:.06em;text-transform:uppercase}
+  @media (max-width:480px){body{font-size:17px}.hero{padding:44px 0 28px}.cal iframe{height:820px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="brand">Mentalista <b>Tomasz Łuczak</b></div></div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="hero-text">
+      <div class="tag" id="tag">Z polecenia</div>
+      <h1>Ktoś, kto przeszedł tę drogę, uznał, że powinieneś tu trafić.</h1>
+      <p class="lead">Nie dostałeś tego linku z reklamy. Dostałeś go od faceta, który stał kiedyś tam, gdzie ty stoisz dziś.</p>
+    </div>
+    <figure class="hero-photo">
+      <img src="img/tomasz.webp" alt="Tomasz Łuczak, mentalista i hipnoterapeuta" width="900" height="1125">
+      <figcaption>Tomasz Łuczak · mentalista, hipnoterapeuta</figcaption>
+    </figure>
+  </div>
+
+  <!-- MIEJSCE NA FILM OD TOMASZA (później): krótkie powitanie poleconego, 30–60 s -->
+  <section class="video-slot" aria-hidden="true">
+    <div class="slot">Tu wejdzie krótki film od Tomasza: powitanie dla poleconego (30–60 s)</div>
+  </section>
+
+  <section>
+    <p>Wiesz, jak to wygląda. Jesteście w jednym domu, a każde z was żyje na innej planecie.</p>
+    <p>Rozmowy są krótkie albo kończą się kłótnią. Albo gorzej, bo już nawet się nie kłócicie.</p>
+    <p class="punch">Cisza to nie spokój. To sygnał.</p>
+  </section>
+
+  <section>
+    <h2>Mężczyzna Kompletny VIP</h2>
+    <p>90 dni pracy nad tobą, nie nad nią. Bo dopiero kiedy stoisz pewnie, możesz zdecydować, co dalej z relacją.</p>
+    <ul class="list">
+      <li>5 indywidualnych sesji hipnozy</li>
+      <li>3 miesiące spotkań grupowych, dwa razy w tygodniu, z facetami, którzy wiedzą, o czym mówisz</li>
+      <li>Kurs nagrany, do którego wracasz, kiedy chcesz</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Tak wygląda grupa</h2>
+    <p>Nie siedzisz z tym sam. Siedzisz w kręgu facetów, którzy przyszli z tym samym.</p>
+    <div class="gallery">
+      <img class="wide" src="img/grupa.webp" alt="Uczestnicy Mentalista Camp na wspólnym zdjęciu pod drzewem" width="1600" height="900" loading="lazy">
+      <img src="img/ognisko.webp" alt="Rozmowa w kręgu przy ognisku" width="1600" height="900" loading="lazy">
+      <img src="img/razem.webp" alt="Dwóch uczestników obejmuje się i śmieje" width="787" height="1400" loading="lazy">
+      <img src="img/krag.webp" alt="Uczestnicy siedzą w kręgu w lesie" width="787" height="1400" loading="lazy">
+      <img src="img/praca.webp" alt="Uczestnicy pracują z notatkami" width="787" height="1400" loading="lazy">
+      <img class="wide" src="img/szereg.webp" alt="Uczestnicy Mentalista Camp stoją w szeregu" width="1600" height="900" loading="lazy">
+    </div>
+  </section>
+
+  <section>
+    <div class="bonus">
+      <h2>Twój bonus z polecenia</h2>
+      <p>Przychodzisz z polecenia, więc dostajesz dodatkowe miesiące spotkań grupowych: 3 miesiące do programu Mężczyzna Kompletny VIP (razem pół roku z grupą) albo 1 miesiąc do programu Mentor.</p>
+      <p class="note">Szczegóły w <a href="regulamin.html" style="color:inherit">regulaminie programu poleceń</a>.</p>
+    </div>
+    <div class="video">
+      <video controls playsinline preload="none" poster="img/camp-poster.webp" width="540" height="958">
+        <source src="img/camp-najlepsze.mp4" type="video/mp4">
+      </video>
+      <p class="note">Mentalista Camp 2026. 40 sekund z weekendu, na który jedziesz z grupą.</p>
+    </div>
+  </section>
+
+  <section id="rozmowa">
+    <h2>Umów rozmowę</h2>
+    <p>Bezpłatna, bez zobowiązań. Pogadamy, gdzie jesteś i czy to dla ciebie.</p>
+
+    <label class="consent" id="consentBox" hidden>
+      <input type="checkbox" id="consent">
+      <span>Możecie dać znać osobie, która mnie poleciła, że umówiłem rozmowę. Bez żadnych szczegółów, tylko tyle, że się zapisałem. Akceptuję <a href="regulamin.html" target="_blank" style="color:inherit">regulamin programu poleceń</a>.</span>
+    </label>
+
+    <div class="cal"><iframe id="cal" title="Kalendarz — bezpłatna konsultacja" loading="lazy"></iframe></div>
+    <p class="note" id="noref" hidden>Jeśli ktoś dał ci kod polecenia, wpisz go w formularzu zapisu w polu „Kto Cię polecił?”.</p>
+  </section>
+
+  <section>
+    <p class="close">Ten, kto ci to wysłał, nie robił tego dla siebie.</p>
+  </section>
+</main>
+
+<footer><div class="wrap">Mentalista Tomasz Łuczak · <a href="https://tomaszluczak.pl" style="color:inherit">tomaszluczak.pl</a> · <a href="regulamin.html" style="color:inherit">Regulamin programu poleceń</a><br>Organizator: Like Nature sp. z o.o., ul. Zimna 1, 65-707 Zielona Góra, NIP 9292088235</div></footer>
+
+<div class="draft">Wersja robocza</div>
+
+<script>
+(function(){
+  var BOOKING = "https://api.leadconnectorhq.com/widget/bookings/tomasz-luczak-darmowa-konsultacja";
+  var params = new URLSearchParams(location.search);
+  var raw = (params.get("ref") || "").toUpperCase();
+  var ref = /^[A-Z0-9]{2,12}$/.test(raw) ? raw : "";
+  var kto = (params.get("n") || "").replace(/[<>"]/g,"").trim().slice(0,60);
+  if (ref && kto){ document.getElementById("tag").textContent = "Polecił Cię " + kto; }
+  var cal = document.getElementById("cal");
+  var consent = document.getElementById("consent");
+
+  function build(){
+    var q = new URLSearchParams();
+    if (ref){
+      q.set("utm_source","polecenie");
+      q.set("utm_medium","link-polecajacy");
+      q.set("utm_campaign", ref);
+      q.set("ref", ref);
+      q.set("zgoda", consent.checked ? "1" : "0");
+    }
+    var s = q.toString();
+    cal.src = BOOKING + (s ? "?" + s : "");
+  }
+
+  if (ref){
+    document.getElementById("consentBox").hidden = false;
+    consent.addEventListener("change", build);
+  } else {
+    document.getElementById("noref").hidden = false;
+  }
+  build();
+})();
+</script>
+</body>
+</html>
